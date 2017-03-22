@@ -3,9 +3,12 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    Name = models.TextField()
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    mobile = models.TextField()
+    DOB = models.TextField()
+    Flag = models.CharField(max_length=1)
+    ORG = models.TextField()
 
     def publish(self):
         self.published_date = timezone.now()
