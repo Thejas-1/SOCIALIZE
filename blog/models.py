@@ -9,4 +9,11 @@ class Post(models.Model):
     DOB = models.CharField(max_length=30)
     Flag = models.CharField(max_length=1)
     ORG = models.CharField(max_length=200)
+    published_date = models.DateTimeField(blank=True, null=True)
 
+    def publish(self):
+        self.published_data = timezone.now()
+        self.Name = 'Thejas'
+	self.save()
+
+    
