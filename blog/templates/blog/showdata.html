@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SHOWDATA</title>
+</head>
+
+<body>
+(% if all_users %}
+
+    <h1>Here is the list of users.</h1>
+<ul>
+    {% for user in all_users %}
+
+    <li> Name:{{ user.Name }} Email:{{ user.Email_ID }}</li>
+    {% endfor %}
+</ul>
+{# In case no user exists.#}
+{% else %}
+<h3> No users found.</h3>
+{% endif %}
+
+
+</body>
+</html>
+
+
