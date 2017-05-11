@@ -18,6 +18,16 @@
     		{% endif %}
 	{% endfor %}
     {% endfor %}
+    {% for user1 in all_users %}
+	{% for user2 in all_users %}
+		{% if user1.DOB = user2.DOB %}
+		{% if user1.Name != user2.Name %}
+	<li> {{ user1.Name }} and {{ user2.Name }} were born on the same day :D
+</li>
+	{% endif %}
+    {% endif %}
+	{% endfor %}
+    {% endfor %}
     </ul>
 {# In case no user exists.#}
 
