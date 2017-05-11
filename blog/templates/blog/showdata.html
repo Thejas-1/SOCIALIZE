@@ -8,19 +8,19 @@
 (% if all_users %}
 
     <h1>Here is the list of users.</h1>
-<ul>
-    {% for user in all_users %}
-
-    <li> Name:{{ user.Name }} Email:{{ user.Email_ID }}</li>
+    <ul>
+    {% for user1 in all_users %}
+	{% for user2 in all_users %}
+    		{% if user1.ORG = user2.ORG %}
+		{% if user1.Name != user2.Name %}
+	<li> {{ user1.Name }} and {{ user2.Name }} belong to the same university</li>
+		{% endif %}
+    		{% endif %}
+	{% endfor %}
     {% endfor %}
-</ul>
+    </ul>
 {# In case no user exists.#}
-{% else %}
-<h3> No users found.</h3>
-{% endif %}
-
 
 </body>
 </html>
-
 
