@@ -9,60 +9,26 @@
 
 
 <body>
-
 <center>
 
-<form>
-<fieldset class="account-info">
- <label style="text-align: left">
- Name: <input type="text" name="name"><br>
- </label>
- 
-  <label style="text-align: left">
- Email ID:<input type="text" name="email"><br>
- </label>
-
- <label style="text-align: left">
- Mobile Number:<input type="text" name="phno"><br>
- </label>
-
- <label style="text-align: left">
- DOB:<input type="text" name="DOB"><br>
- </label>
-
-  <label style="text-align: left">
- Are you working?<br><input type="radio" name="yes/no" value="yes">Yes<br>
- <input type="radio" name="yes/no" value="no">No<br>
- </label>
-
-  <label style="text-align: left">
- Institution/Organisation name:<input type="text" name="organise"><br>
- </label>
-</fieldset>
-
-<fieldset class="account-action">
-    <input class="btn" type="submit" name="submit" value="submit">
-  </fieldset>
-
-</form>
-
- <div class="content container">
+<div class="content container">
             <div class="row">
                 <div class="col-md-8">
-		{% if is_registered %}
-		    <script>alert("You are successfully registered with username:{{user_obj.Name}} and Email: {{user_obj.Email_ID }}")</script>
-		    {% else %}
-		    <form action="{% url 'blog:signup' %}" method="post">
-		    {% csrf_token %}
-	           {{ form }}
-		    <input type="submit" value="Submit">
+                {% if is_registered %}
+                    <script>alert("You are successfully registered with username:{{user_obj.Name}} and Email: {{user_obj.Email_ID }}")</script>
+                    {% else %}
+                    <form action="{% url 'blog:signup' %}" method="post">
+                    {% csrf_token %}
+                   {{ form }}
+                    <input type="submit" value="Submit">
 </form>
-		{% endif %}
+                {% endif %}
                 </div>
             </div>
         </div>
+<a>NOTE: If you're a student, then please fill in 1 for flag</a>
 
+</body>
 
-</body> 
+</center>
 
-</center>                                               
